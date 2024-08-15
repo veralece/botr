@@ -1,7 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://i23juntwp7q2"]
+[gd_scene load_steps=2 format=3 uid="uid://gjyedxtbfxy1"]
 
-[ext_resource type="PackedScene" uid="uid://mbqsmx5ivpp6" path="res://rat/rat.fbx" id="1_10eds"]
+[ext_resource type="PackedScene" uid="uid://bx3a3hq2u0t5" path="res://rat/rat.glb" id="1_1r8ia"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Root Scene" parent="." instance=ExtResource("1_10eds")]
+[node name="rat2" parent="." instance=ExtResource("1_1r8ia")]
