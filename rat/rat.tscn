@@ -1,7 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://gjyedxtbfxy1"]
+[gd_scene load_steps=5 format=3 uid="uid://i23juntwp7q2"]
 
 [ext_resource type="PackedScene" uid="uid://bx3a3hq2u0t5" path="res://rat/rat.glb" id="1_1r8ia"]
+[ext_resource type="Script" path="res://rat/rat.gd" id="2_kcdvy"]
+
+[sub_resource type="Animation" id="Animation_ye4ba"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rat Boy:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.00687776, -0.00492508, -0.00190235), Vector3(0.530694, -0.00571041, -0.00482646), Vector3(-0.00687776, -0.00492508, -0.00190235), Vector3(-0.515093, -0.00565929, 0.000851656), Vector3(-0.00687776, -0.00492508, -0.00190235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jajhp"]
+_data = {
+"walk": SubResource("Animation_ye4ba")
+}
 
 [node name="Node3D" type="Node3D"]
 
-[node name="rat2" parent="." instance=ExtResource("1_1r8ia")]
+[node name="Rat Boy" parent="." instance=ExtResource("1_1r8ia")]
+transform = Transform3D(0.999986, 0.0019362, -0.00492495, -0.0019023, 0.999975, 0.0068777, 0.00493814, -0.00686824, 0.999964, 0, 0, 0)
+script = ExtResource("2_kcdvy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_jajhp")
+}
