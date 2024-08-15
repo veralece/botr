@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://i23juntwp7q2"]
+
+[ext_resource type="PackedScene" uid="uid://mbqsmx5ivpp6" path="res://rat/rat.fbx" id="1_10eds"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Root Scene" parent="." instance=ExtResource("1_10eds")]
