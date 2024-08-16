@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjxndy4gmqwmx"]
+
+[ext_resource type="PackedScene" uid="uid://i23juntwp7q2" path="res://rat/rat.tscn" id="1_c48mg"]
+
+[node name="Player" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018731, -0.0327128, -0.264093)
+
+[node name="Node3D" parent="." instance=ExtResource("1_c48mg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.111542, -1.49012e-08, 0.257278)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.79654, 0.550248, 0.250173)
