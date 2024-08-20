@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://o8088i802f43"]
+[gd_scene load_steps=7 format=3 uid="uid://o8088i802f43"]
 
 [ext_resource type="PackedScene" uid="uid://cjxndy4gmqwmx" path="res://player/player.tscn" id="1_s7hun"]
 
@@ -8,9 +8,17 @@ size = Vector3(60, 3, 60)
 [sub_resource type="BoxMesh" id="BoxMesh_dfr8s"]
 size = Vector3(60, 3, 60)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_d82uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s4rid"]
+albedo_color = Color(0.047356, 0.661013, 0.689527, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5jq2"]
+albedo_color = Color(0.952751, 0.669594, 0.960338, 1)
+
 [node name="Main" type="Node"]
 
-[node name="Ground" type="Area3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 collision_mask = 0
 
@@ -24,3 +32,26 @@ mesh = SubResource("BoxMesh_dfr8s")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.0097, 0)
 
 [node name="Player" parent="." instance=ExtResource("1_s7hun")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Z Cylinder" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28.5715)
+mesh = SubResource("CylinderMesh_d82uc")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4rid")
+
+[node name="Z Cylinder2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.9546)
+mesh = SubResource("CylinderMesh_d82uc")
+surface_material_override/0 = SubResource("StandardMaterial3D_s4rid")
+
+[node name="X Cylinder" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0612, 0, -0.0215168)
+mesh = SubResource("CylinderMesh_d82uc")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")
+
+[node name="X Cylinder2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3962, 0, -0.0215168)
+mesh = SubResource("CylinderMesh_d82uc")
+surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")

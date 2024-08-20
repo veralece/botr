@@ -66,6 +66,8 @@ libraries = {
 }
 
 [node name="Pivot" type="Node3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564218, 0)
 
 [node name="Rat Boy" parent="Pivot" instance=ExtResource("1_1r8ia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0108734, 0)

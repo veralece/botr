@@ -1,26 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjxndy4gmqwmx"]
+[gd_scene load_steps=5 format=3 uid="uid://cjxndy4gmqwmx"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0dy7u"]
 [ext_resource type="PackedScene" uid="uid://i23juntwp7q2" path="res://rat/rat.tscn" id="1_c48mg"]
+[ext_resource type="Script" path="res://player/SpringArm3D.gd" id="3_amkxc"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kibu7"]
-radius = 0.15
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5ake"]
+radius = 0.315936
+height = 0.631873
 
 [node name="Player" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.033, 0)
 collision_layer = 2
 script = ExtResource("1_0dy7u")
 
 [node name="Rat" parent="." instance=ExtResource("1_c48mg")]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.0323407, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="CameraPivot" type="Node3D" parent="Rat"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.0323407, 0)
+[node name="SpringArm3D" type="SpringArm3D" parent="Rat"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0.00748739, -0.999972, 0, 0.999972, 0.00748739, 1, 3.27284e-10, -4.37102e-08, 0, 0, 0)
+spring_length = 5.0
+margin = 0.2
+script = ExtResource("3_amkxc")
 
-[node name="Camera3D" type="Camera3D" parent="Rat/CameraPivot"]
-transform = Transform3D(1, 0, 0, 0, 0.985512, 0.169608, 0, -0.169608, 0.985512, -1.19209e-07, 1.03614, 1.71167)
+[node name="Camera3D" type="Camera3D" parent="Rat/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.975757, 0.218859, 0, -0.218859, 0.975757, 1.19209e-07, 1.26409, 3.12497)
+current = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
-shape = SubResource("SphereShape3D_kibu7")
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 3.36806e-05, -0.000942827, -2.71083e-05, 0.999976, 0.00697007, 0.000943039, -0.00697005, 0.999975, 0, 0.331416, 0)
+shape = SubResource("CapsuleShape3D_d5ake")
