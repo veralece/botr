@@ -14,7 +14,7 @@ func _physics_process(delta):
 	
 	#check to see if direction was modified on this frame, then normalize it.
 	if direction != Vector3.ZERO:
-		direction = direction.rotated(Vector3.UP, %SpringArm3D.rotation.y).normalized()
+		direction = direction.rotated(Vector3.UP, %CameraPivot.rotation.y).normalized()
 	
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
@@ -35,4 +35,4 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(_delta):
-	%SpringArm3D.position = position
+	%CameraPivot.position = position

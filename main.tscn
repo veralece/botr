@@ -34,24 +34,24 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.
 [node name="Player" parent="." instance=ExtResource("1_s7hun")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="Cylinders" type="Node3D" parent="."]
 
-[node name="Z Cylinder" type="MeshInstance3D" parent="Node3D"]
+[node name="Z Cylinder" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -28.5715)
 mesh = SubResource("CylinderMesh_d82uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4rid")
 
-[node name="Z Cylinder2" type="MeshInstance3D" parent="Node3D"]
+[node name="Z Cylinder2" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 27.9546)
 mesh = SubResource("CylinderMesh_d82uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_s4rid")
 
-[node name="X Cylinder" type="MeshInstance3D" parent="Node3D"]
+[node name="X Cylinder" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.0612, 0, -0.0215168)
 mesh = SubResource("CylinderMesh_d82uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")
 
-[node name="X Cylinder2" type="MeshInstance3D" parent="Node3D"]
+[node name="X Cylinder2" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3962, 0, -0.0215168)
 mesh = SubResource("CylinderMesh_d82uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")
