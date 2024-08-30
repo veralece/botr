@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://djypv2eb5d5kr"]
+
+[ext_resource type="PackedScene" uid="uid://b6p6nqlwoj2uo" path="res://Cleaver/Cleaver.glb" id="1_sxac0"]
+
+[node name="Cleaver" type="Node3D"]
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Cleaver" parent="Node3D" instance=ExtResource("1_sxac0")]
