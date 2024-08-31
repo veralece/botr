@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://djypv2eb5d5kr"]
+[gd_scene load_steps=4 format=3 uid="uid://djypv2eb5d5kr"]
 
-[ext_resource type="PackedScene" uid="uid://b6p6nqlwoj2uo" path="res://Cleaver/Cleaver.glb" id="1_sxac0"]
+[ext_resource type="PackedScene" uid="uid://b6p6nqlwoj2uo" path="res://cleaver/Cleaver.glb" id="1_sxac0"]
 
-[node name="Cleaver" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2sa6"]
+size = Vector3(0.160669, 0.408748, 0.0331436)
 
-[node name="Node3D" type="Node3D" parent="."]
+[sub_resource type="SphereShape3D" id="SphereShape3D_govmv"]
+radius = 0.435843
 
-[node name="Cleaver" parent="Node3D" instance=ExtResource("1_sxac0")]
+[node name="Cleaver" type="StaticBody3D" groups=["equippable_items", "promptable_items"]]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0196655, 0.0170753, 0.121676)
+shape = SubResource("BoxShape3D_e2sa6")
+
+[node name="Cleaver" parent="." instance=ExtResource("1_sxac0")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.0142056, 0)
+
+[node name="EquipArea" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EquipArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0893255)
+shape = SubResource("SphereShape3D_govmv")

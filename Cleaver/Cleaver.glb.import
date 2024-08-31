@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b6p6nqlwoj2uo"
-path="res://.godot/imported/Cleaver.glb-d0f634ffc6202058ed657a462bbae13e.scn"
+path="res://.godot/imported/Cleaver.glb-4c37760513413e74b6b9cc3735d50109.scn"
 
 [deps]
 
-source_file="res://Cleaver/Cleaver.glb"
-dest_files=["res://.godot/imported/Cleaver.glb-d0f634ffc6202058ed657a462bbae13e.scn"]
+source_file="res://cleaver/Cleaver.glb"
+dest_files=["res://.godot/imported/Cleaver.glb-4c37760513413e74b6b9cc3735d50109.scn"]
 
 [params]
 
