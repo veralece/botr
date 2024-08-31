@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://o8088i802f43"]
+[gd_scene load_steps=9 format=3 uid="uid://o8088i802f43"]
 
 [ext_resource type="PackedScene" uid="uid://cjxndy4gmqwmx" path="res://player/player.tscn" id="1_s7hun"]
+[ext_resource type="PackedScene" uid="uid://blart4wnbx87m" path="res://table/table.tscn" id="2_a7uqi"]
+[ext_resource type="PackedScene" uid="uid://djypv2eb5d5kr" path="res://cleaver/cleaver.tscn" id="3_c4ulc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sofdo"]
 size = Vector3(60, 3, 60)
@@ -55,3 +57,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3962, 0, -0.0215168)
 mesh = SubResource("CylinderMesh_d82uc")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5jq2")
+
+[node name="Table" parent="." instance=ExtResource("2_a7uqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52315, 0, 0)
+
+[node name="Cleaver" parent="." instance=ExtResource("3_c4ulc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25563, 0.0828859, -7.29385)
