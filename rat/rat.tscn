@@ -71,3 +71,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0564218, 0)
 
 [node name="Rat Boy" parent="Pivot" instance=ExtResource("1_1r8ia")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.0108734, 0)
+
+[node name="ItemAttachment" type="Node3D" parent="Pivot/Rat Boy"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.348093, 0)
+
+[node name="ItemPivot" type="Node3D" parent="Pivot/Rat Boy/ItemAttachment"]
+unique_name_in_owner = true
