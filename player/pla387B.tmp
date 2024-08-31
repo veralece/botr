@@ -13,7 +13,6 @@ radius = 1.0
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_0dy7u")
 
 [node name="Rat" parent="." instance=ExtResource("1_c48mg")]
@@ -35,17 +34,12 @@ script = ExtResource("3_amkxc")
 transform = Transform3D(1, 0, 0, 0, 0.975757, 0.218859, 0, -0.218859, 0.975757, 1.19209e-07, 1.26409, 3.12497)
 current = true
 
+[node name="Prompt" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464115, 1, 0)
+
 [node name="ActionDetector" type="Area3D" parent="."]
 collision_layer = 0
-collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActionDetector"]
 shape = SubResource("SphereShape3D_1akp5")
-
-[node name="Prompt" type="Label3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, -2.64698e-23, 0, 0, 1, 0, 0, 0, 1, 0, 1.59089, 0)
-font_size = 100
-
-[connection signal="body_entered" from="ActionDetector" to="." method="_on_action_detector_body_entered"]
-[connection signal="body_exited" from="ActionDetector" to="." method="_on_action_detector_body_exited"]
