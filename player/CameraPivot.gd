@@ -12,5 +12,6 @@ func _unhandled_input(event):
 		rotation.x = clampf(rotation.x, -1.0, -0.1)
 		
 		rotation.y -= event.relative.x * mouse_sensitivity
-		rotation.y = wrapf(rotation.y, 0.0, 360.0)
+		rotation.y = wrapf(rotation.y, -PI, PI)
+
 		%Prompt.rotation.y = rotation.y + 90

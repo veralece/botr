@@ -1,19 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cjxndy4gmqwmx"]
+[gd_scene load_steps=7 format=3 uid="uid://cjxndy4gmqwmx"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_0dy7u"]
 [ext_resource type="PackedScene" uid="uid://i23juntwp7q2" path="res://rat/rat.tscn" id="1_c48mg"]
 [ext_resource type="Script" path="res://player/CameraPivot.gd" id="3_amkxc"]
+[ext_resource type="Script" path="res://player/ActionDetector.gd" id="4_5ac5c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d5ake"]
 radius = 0.315936
 height = 0.631873
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1akp5"]
-radius = 1.0
+radius = 1.96894
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["players"]]
 collision_layer = 2
-collision_mask = 5
 script = ExtResource("1_0dy7u")
 
 [node name="Rat" parent="." instance=ExtResource("1_c48mg")]
@@ -38,6 +38,7 @@ current = true
 [node name="ActionDetector" type="Area3D" parent="."]
 collision_layer = 0
 collision_mask = 4
+script = ExtResource("4_5ac5c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ActionDetector"]
 shape = SubResource("SphereShape3D_1akp5")
@@ -47,5 +48,5 @@ unique_name_in_owner = true
 transform = Transform3D(1, -2.64698e-23, 0, 0, 1, 0, 0, 0, 1, 0, 1.59089, 0)
 font_size = 100
 
-[connection signal="body_entered" from="ActionDetector" to="." method="_on_action_detector_body_entered"]
-[connection signal="body_exited" from="ActionDetector" to="." method="_on_action_detector_body_exited"]
+[connection signal="area_entered" from="ActionDetector" to="ActionDetector" method="_on_area_entered"]
+[connection signal="area_exited" from="ActionDetector" to="ActionDetector" method="_on_area_exited"]
