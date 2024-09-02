@@ -11,6 +11,10 @@ func change_item(new_item):
 		attached_item[0].reparent(get_tree().get_root())
 	new_item.reparent(%ItemPivot)
 	new_item.global_position = %ItemPivot.global_position
+	print(new_item.rotation.y)
+	new_item.rotation.y = wrapf(%ItemPivot.rotation.y, -PI, PI) - 90
+	print(new_item.rotation.y)
+	
 
 func drop_item(): 
 	var attached_item: Array[Node] = %ItemPivot.get_children()

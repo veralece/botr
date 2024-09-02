@@ -1,6 +1,6 @@
 extends SpringArm3D
 
-@export var mouse_sensitivity = 0.01
+@export var mouse_sensitivity = 0.005
 
 func _ready():
 	set_as_top_level(true)
