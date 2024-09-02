@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://o8088i802f43"]
+[gd_scene load_steps=10 format=3 uid="uid://o8088i802f43"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_5dldw"]
 [ext_resource type="PackedScene" uid="uid://cjxndy4gmqwmx" path="res://player/player.tscn" id="1_s7hun"]
 [ext_resource type="PackedScene" uid="uid://blart4wnbx87m" path="res://table/table.tscn" id="2_a7uqi"]
 [ext_resource type="PackedScene" uid="uid://djypv2eb5d5kr" path="res://cleaver/cleaver.tscn" id="3_c4ulc"]
@@ -19,6 +20,7 @@ albedo_color = Color(0.047356, 0.661013, 0.689527, 1)
 albedo_color = Color(0.952751, 0.669594, 0.960338, 1)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_5dldw")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
@@ -31,7 +33,7 @@ shape = SubResource("BoxShape3D_sofdo")
 mesh = SubResource("BoxMesh_dfr8s")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.0097, 0)
+transform = Transform3D(1, 0, 0, 0, 0.534898, 0.844917, 0, -0.844917, 0.534898, 0, 18.0097, 20.3561)
 
 [node name="Player" parent="." instance=ExtResource("1_s7hun")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
@@ -63,3 +65,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.52315, 0, 0)
 
 [node name="Cleaver" parent="." instance=ExtResource("3_c4ulc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25563, 0.0828859, -7.29385)
+
+[node name="Big Cleaver" parent="." instance=ExtResource("3_c4ulc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 5.25563, 0.0828859, -5.9968)
+
+[connection signal="player_spawned" from="Player" to="." method="_on_player_player_spawned"]
