@@ -23,7 +23,6 @@ func _input(event):
 			#attack()
 	if event.is_action_pressed("action"):
 		if actionable_item != null: 
-			print("Current action %s" % actionable_item)
 			if actionable_item.is_in_group("equippable_items"):
 				actionable_item.equip()
 				var old_item = change_equipped_item(actionable_item)
@@ -32,7 +31,7 @@ func _input(event):
 
 			elif actionable_item.is_in_group("item_storage"):
 				#? renaming to the item to storage for clarity
-				var storage = actionable_item
+				var storage = actionable_item.get_parent() #the actual storage script is stored in the parent of the action, maybe this can be refactored for clarity
 
 				if storage.has_item() && current_item != null:
 					var item = storage.get_item()
@@ -70,11 +69,13 @@ func remove_item():
 	if current_item != null:
 		var item = current_item
 		%Rat.drop_item()
+		item.drop()
 		current_item = null
 		return item
 
 func double_action():
 	frames_since_last_action = 0.0
+	remove_item()
 	print("double action!!!")
 
 func _physics_process(delta):
