@@ -6,16 +6,15 @@ func stop_walk():
 	%AnimationPlayer.play("RESET")
 
 func change_item(new_item): 
-	print("change_item called")
 	var attached_item = %ItemPivot.get_children()
 	if attached_item.size() > 0:
-		for child_item in attached_item:
-			child_item.reparent(get_tree().get_root())
+		attached_item[0].reparent(get_tree().get_root())
 	new_item.reparent(%ItemPivot)
 	new_item.global_position = %ItemPivot.global_position
 
-func remove_item(): 
-	var attached_item = %ItemPivot.get_children()
+func drop_item(): 
+	var attached_item: Array[Node] = %ItemPivot.get_children()
 	if attached_item.size() > 0:
-		for child_item in attached_item:
-			child_item.reparent(get_tree().get_root())
+		var pos = attached_item[0].global_position
+		attached_item[0].global_position = Vector3(pos.x, 0.0125, pos.z)
+		attached_item[0].reparent(get_tree().get_root())
