@@ -13,8 +13,7 @@ height = 0.75
 [sub_resource type="BoxShape3D" id="BoxShape3D_p8nr6"]
 size = Vector3(1.66895, 1.26465, 1.75879)
 
-[node name="Table" type="StaticBody3D" groups=["item_storage", "promptable_items"]]
-collision_layer = 4
+[node name="Table" type="StaticBody3D" groups=["item_storage"]]
 collision_mask = 0
 script = ExtResource("1_7fri8")
 
@@ -34,7 +33,7 @@ mesh = SubResource("CylinderMesh_cykrw")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82612, 0)
 
-[node name="PlaceArea" type="Area3D" parent="."]
+[node name="PlaceArea" type="Area3D" parent="." groups=["actionable", "item_storage"]]
 collision_layer = 4
 collision_mask = 0
 

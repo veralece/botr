@@ -10,7 +10,7 @@ func get_item():
 	var attached_item = %ItemPivot.get_children()
 	if attached_item.size() > 0:
 		return attached_item[0]
-	
+
 
 func has_item():
 	return %ItemPivot.get_children().size() > 0
