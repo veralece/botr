@@ -19,7 +19,7 @@ albedo_color = Color(0.047356, 0.661013, 0.689527, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a5jq2"]
 albedo_color = Color(0.952751, 0.669594, 0.960338, 1)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["main"]]
 script = ExtResource("1_5dldw")
 
 [node name="Ground" type="StaticBody3D" parent="."]

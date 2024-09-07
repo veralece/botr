@@ -1,5 +1,5 @@
 extends SpringArm3D
-
+#TODO add ui slider that adjusts this number from 0.001 to 1.0
 @export var mouse_sensitivity = 0.005
 
 func _ready():

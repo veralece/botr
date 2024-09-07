@@ -11,18 +11,19 @@ func _ready():
 @export var gravity = 75.0
 @export var bounce_impulse = 16.0
 @export var rotation_speed = 5.0
-@export var actionable_item: Node = null
+@export var actionable_item: Node = null 
 @export var action_queue: Array[Node] = []
 
 enum ACTIONS {IDLE, WALKING, JUMPING, PROCESSING, ATTACKING}
 var action_state = ACTIONS.IDLE
 var frames_since_last_action = 0.0
-
+#TODO process input with player.process(actionable_item)
 func _input(event):
 	#if event.is_action_pressed("attack"):
 			#attack()
 	if event.is_action_pressed("action"):
 		if actionable_item != null: 
+			#player.process()
 			if actionable_item.is_in_group("equippable_items"):
 				actionable_item.equip()
 				var old_item = change_equipped_item(actionable_item)

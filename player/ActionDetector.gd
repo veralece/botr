@@ -9,7 +9,7 @@ func process_hit(hitbox):
 
 ## Adds actions to the queue 
 func process_action(action):
-	var player = get_tree().get_nodes_in_group("players")[0]
+	var player = get_tree().get_nodes_in_group("main")[0].player
 	if player.actionable_item == null:
 		player.action_queue.push_back(action)
 	
@@ -35,7 +35,7 @@ func process_action(action):
 		player.actionable_item = null
 
 func process_action_exit(exiting_action):
-	var player = get_tree().get_nodes_in_group("players")[0]
+	var player = get_tree().get_nodes_in_group("main")[0].player
 	var size = player.action_queue.size()
 	var exiting_action_currently_queued = player.action_queue.any(func(q_action): return q_action == exiting_action)
 	if exiting_action_currently_queued:
@@ -49,9 +49,10 @@ func process_action_exit(exiting_action):
 		process_action(player.action_queue.pop_front())
 
 func _on_area_entered(body):
+	#TODO if player.enemy_detected, then prioritize combat
 	if body.is_in_group("hitboxes"): #hitboxes are usually on a separate child area under the node that stores state
 		process_hit(body)
-	elif body.is_in_group("actionable"):
+	elif body.is_in_group("actionable"): #TODO && player.enemy_detected == false
 		process_action(body)
 	
 
