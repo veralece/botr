@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_5dldw"]
 [ext_resource type="PackedScene" uid="uid://cjxndy4gmqwmx" path="res://player/player.tscn" id="1_s7hun"]
 [ext_resource type="PackedScene" uid="uid://blart4wnbx87m" path="res://table/table.tscn" id="2_a7uqi"]
-[ext_resource type="PackedScene" uid="uid://djypv2eb5d5kr" path="res://cleaver/cleaver.tscn" id="3_c4ulc"]
+[ext_resource type="PackedScene" uid="uid://djypv2eb5d5kr" path="res://Cleaver/cleaver.tscn" id="3_c4ulc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sofdo"]
 size = Vector3(60, 3, 60)

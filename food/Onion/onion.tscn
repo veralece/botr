@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://credu8spexxai"]
+
+[ext_resource type="Script" path="res://food/Onion/onion.gd" id="1_df2ua"]
+
+[node name="Onion" type="Node3D"]
+script = ExtResource("1_df2ua")

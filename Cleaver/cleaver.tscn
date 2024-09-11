@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://djypv2eb5d5kr"]
 
 [ext_resource type="Script" path="res://cleaver/cleaver.gd" id="1_qrnh1"]
-[ext_resource type="PackedScene" uid="uid://b6p6nqlwoj2uo" path="res://cleaver/Cleaver.glb" id="1_sxac0"]
+[ext_resource type="PackedScene" uid="uid://b6p6nqlwoj2uo" path="res://Cleaver/Cleaver.glb" id="1_sxac0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_govmv"]
 radius = 0.435843

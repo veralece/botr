@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://i23juntwp7q2"]
+[gd_scene load_steps=8 format=3 uid="uid://i23juntwp7q2"]
 
 [ext_resource type="PackedScene" uid="uid://bx3a3hq2u0t5" path="res://rat/rat.glb" id="1_1r8ia"]
 [ext_resource type="Script" path="res://rat/rat.gd" id="2_kcdvy"]
+[ext_resource type="PackedScene" uid="uid://bduoc14mec4ir" path="res://rat/rat-rig.glb" id="3_q45n5"]
 
 [sub_resource type="Animation" id="Animation_06p0u"]
 length = 0.001
@@ -77,3 +78,5 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.348093, 0)
 
 [node name="ItemPivot" type="Node3D" parent="Pivot/Rat Boy/ItemAttachment"]
 unique_name_in_owner = true
+
+[node name="rat-rig" parent="Pivot/Rat Boy/ItemAttachment" instance=ExtResource("3_q45n5")]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6p6nqlwoj2uo"
-path="res://.godot/imported/Cleaver.glb-d0f634ffc6202058ed657a462bbae13e.scn"
+uid="uid://bduoc14mec4ir"
+path="res://.godot/imported/rat-rig.glb-9596faba1618073a75c043d3c8fca0f7.scn"
 
 [deps]
 
-source_file="res://Cleaver/Cleaver.glb"
-dest_files=["res://.godot/imported/Cleaver.glb-d0f634ffc6202058ed657a462bbae13e.scn"]
+source_file="res://rat/rat-rig.glb"
+dest_files=["res://.godot/imported/rat-rig.glb-9596faba1618073a75c043d3c8fca0f7.scn"]
 
 [params]
 
